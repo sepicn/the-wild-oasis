@@ -55,7 +55,7 @@ function BookingRow({
     totalPrice,
     status,
     guests: { fullName: guestName, email },
-    cabins: { name: cabinName },
+    cabins,
   },
 }) {
   const navigate = useNavigate()
@@ -69,7 +69,7 @@ function BookingRow({
 
   return (
     <Table.Row>
-      <Cabin>{cabinName}</Cabin>
+      <Cabin>{cabins ? cabins.name : "No cabin assigned"}</Cabin>
 
       <Stacked>
         <span>{guestName}</span>
